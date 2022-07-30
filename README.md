@@ -6,21 +6,23 @@ To run docker:
 
 1. Open path of project in cmd
 
-2. docker build --tag <container-name> .
+2. docker build --tag <container-name> .\n
 !Important: Add . at the end of the line!
 
-3. docker images
+3. docker images\n
 -> View your images
 
-4. docker run -d -p 5000:5000 <container-name>
--> After successfully build you can open localhost/5000 to use the website
+4. docker run -d -p 5000:5000 <container-name>\n
+-> After successfully build you can open localhost:5000 to use the website
 
-Extra: docker ps
+Extra: docker ps\n
 -> Use for see all running docker images atm
 
-Extra: docker stop <container-name>
+Extra: docker stop <container-id>
 
-Extra: docker container prune
+Extra: docker rmi -f <container-id>
+
+Extra: docker container prune\n
 -> Stop all unused resources, freeing up space
 
 
