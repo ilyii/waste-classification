@@ -1,0 +1,10 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+Flask~=2.0.2
+gunicorn==20.1.0
+torch==1.11.0+cpu
+torchvision==0.12.0+cpu
+pillow~=9.0.1
+requests~=2.27.1
+future==0.18.2
+pydrive
+efficientnet_pytorch
