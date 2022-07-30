@@ -35,7 +35,17 @@ If you want to use the feature to upload images to Google Drive via website:
 
 ---> You have to create this via the Google Cloud API!
 
+3. If you added the json file, you can start the flask app via docker or console
 
+4. If you are trying to upload an image, you should be able to authorize yourself
+
+5. When you authorized yourself, a new file will be created automaticly (mycreds.txt)
+
+6. Your done! Now it should be possible to upload files in your folder via website!
+
+--> If you have problems, maybe you forgot to edit the id for the folder in app.py. It's a variable below imports named id_folder. Right now thats mine, so you have to edit it. You'll find your folder id in your Google Drive.Just do a right click on the folder.
+
+!!!!!!!!!!!!!!!!!!
 If you do not want to use this feature, then you do not need to create the file. However, you must then make a change in the code app.py! There you have to comment out the lines: ... must be commented out.
 Now no more images are uploaded, so the first function doesn't work anymore. The function to classify a picture now works correctly, but the photo is not uploaded anymore!
-
+!!!!!!!!!!!!!!!!!!
