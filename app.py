@@ -20,6 +20,7 @@ classes = {0: 'Glas', 1: 'Organic', 2: 'Paper', 3: 'Restmuell', 4: 'Wertstoff'}
 
 # Add the id of your folder here (From google drive)
 folder_id = '1Z1TjfkEYPUtVBwqZgSV4Om0i2VRTD2qX'
+bool_use_upload_feature = False
 #net = models.resnet18(pretrained=False)
 #num_ftrs = net.fc.in_features
 #net.fc = nn.Linear(num_ftrs, 5)
@@ -88,7 +89,7 @@ def upload():
         img_bytes = f.read()
         f.seek(0)
 
-        if request.form.to_dict(flat=False)['checkbox'][0] == 'yes':
+        if bool_use_upload_feature and request.form.to_dict(flat=False)['checkbox'][0] == 'yes':
             f.save(secure_filename(f.filename))
             drive = googleAuth()
 
@@ -111,6 +112,9 @@ def uploadImages():
     if request.method == 'POST':
         images_list = request.files.getlist('files[]')
         for f in images_list:
+            ret = {"got": "" + f.filename}
+            if not bool_use_upload_feature:
+                return ret
             drive = googleAuth()
             f.save(secure_filename(f.filename))
             gfile = drive.CreateFile({'parents': [{'id': folder_id}]})
@@ -119,10 +123,7 @@ def uploadImages():
             gfile.Upload()  # Upload the file.
             gfile.content.close()
             os.remove(secure_filename(f.filename))
-
-        ret = {"got": ""+f.filename}
-        return ret
-
+            return ret
     return None
 
 @app.route('/example_images.html', methods=['GET'])
