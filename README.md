@@ -6,7 +6,7 @@ To run docker:
 
 1. Open path of project in cmd
 
-2. docker build --tag <container-name> .<br />
+2. docker build --tag [container-name] .<br />
 !Important: Add . at the end of the line!
 
 3. docker images<br />
