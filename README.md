@@ -1,7 +1,3 @@
-Certainly, here's an example README for your Waste Classification project:
-
-markdown
-Copy code
 # Waste Classification
 
 Authors: [Gabriel](https://github.com/Gabriel9753), [Ilyi](https://github.com/ilyii)
