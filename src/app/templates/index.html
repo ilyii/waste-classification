@@ -1,0 +1,90 @@
+{% extends "base.html" %} {% block content %}
+
+    <p>&#10067; If it is your first time uploading an image or images for us, then please take
+    a look at our gallery, so you know what kind of images we need:<br>
+    <a href="example_images.html">&#8669; Gallery &#8668;</a>
+    </p>
+
+
+
+
+    <hr>
+
+    <h3>Upload images to help us improving our model:</h3>
+    <p>&#10067; You can select up to 30 images. If you select multiple images and click on the button (Send!)
+    <br>it may take a few seconds for a confirmation to appear. If you have to wait very long (up to 60 seconds), please refresh the page
+    <br>and try it again!</p>
+    <form id="upload-images" method="post" enctype="multipart/form-data">
+        <label for="imagesUpload" id="label_multiple_upload" class="upload-label">Select images...</label>
+        <input type="file" name="images[]" id="imagesUpload"  multiple accept="image/*">
+    </form>
+    <div>
+        <button type="button" class="btn btn-primary btn-lg" id="button_multiple">Upload</button>
+        <div id="selected_images"></div>
+    </div>
+
+    <p class="wait_for_loading">&#8987 Just a moment... &#8987</p>
+
+    <div class="w3-container">
+        <div class="w3-light-grey">
+            <div id="myBar" class="w3-container w3-green" style="height:24px; width:0%">
+            </div>
+        </div>
+
+        <p id="myP">Added <span id="demo">0</span> of <span id="end"></span> photos</p>
+    </div>
+    <div id="msg"></div>
+
+        <hr>
+
+    <h3>Classificate your waste:</h3>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" id="label_single_upload" class="upload-label">Select image...</label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict</button>
+        </div>
+    </div>
+
+    <div class="laoding-box">
+        <div class="loader" style="display:none;"></div>
+
+    </div>
+
+    <h3 id="result"><span> </span></h3>
+
+    <div class="progress"></div>
+
+
+
+    <footer id="footer">
+        <a href="classificate_multiple.html">Experiment: Classificate multiple images!</a>
+        <p>Made by Ilyesse and Gabriel.</p>
+        <a href="mailto:oOBeenOo@outlook.de">&#9993; Mail us &#9993;</a>
+    </footer>
+
+
+
+    <p id = "text-accept-uplaod" style="font-size: 18px">Can we use your uploaded image/s for training the model and making it better?</p>
+    <div id="radioDiv">
+        <div class = "radio_float">
+            <input type="radio" id="no" class = "check_image_drive" name="check_image_drive" value="no" >
+            <label class = "radio_allow_upload" for="no">No</label>
+        </div>
+        <div class = "radio_float">
+            <input type="radio" id="yes" class = "check_image_drive" name="check_image_drive" value="yes" checked>
+            <label class = "radio_allow_upload" for="yes">Yes</label>
+            <span class="checkmark"></span>
+        </div>
+    </div>
+
+
+{% endblock %}

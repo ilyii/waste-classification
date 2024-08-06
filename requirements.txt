@@ -2,10 +2,14 @@ matplotlib==3.7.2
 numpy==1.24.3
 optuna==3.3.0
 pandas==1.5.3
-Pillow==9.3.0
 Pillow==10.0.1
 scikit_learn==1.2.0
 seaborn==0.13.0
 torch==2.0.1+cu118
 torchvision==0.15.2+cu118
 tqdm==4.65.0
+Flask~=2.0.2
+gunicorn==20.1.0
+requests~=2.27.1
+future==0.18.2
+pydrive

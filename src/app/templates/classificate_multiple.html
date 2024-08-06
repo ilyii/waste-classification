@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+    <body class="classificate_multiple">
+        <a class="home" href="/">Back to home</a><br>
+
+        <p>//TODO: Not finished yet, but you can use it. Upload up to 10 images!
+        <br><br>This images won't upload into our drive. If you're using new images, then please<br>
+        upload them first on the main page. Thanks!</p>
+        <h3>Classificate your waste:</h3>
+        <form id="form_multi_prediction" method="post" enctype="multipart/form-data">
+            <label for="multi_class_upload" id="label_multi_classificate" class="upload-label">Select images...</label>
+            <input type="file" name="imgs[]" id="multi_class_upload"  multiple accept="image/*">
+        </form>
+
+        <div class="image-section" style="display:none;">
+
+        </div>
+                    <div>
+                <button type="button" class="btn btn-primary btn-lg " id="btn-predict-multiple">Predict</button>
+            </div>
+
+        <div class="laoding-box">
+            <div class="loader-multiple" style="display:none;"></div>
+
+        </div>
+
+        <h3 id="result"><span> </span></h3>
+
+        <div class="progress"></div>
+    </body>
+{% endblock %}
